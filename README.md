@@ -1,4 +1,5 @@
 # sssp005  
+This repository holds the accompanying files for the module SSSP005 Advanced Data Management.
 
 ## Syntax files
 The Stata syntax files for Session 2 are in the s2-analysis folder.
