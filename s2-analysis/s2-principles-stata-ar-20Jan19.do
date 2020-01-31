@@ -2,8 +2,8 @@
 // Session Two: Principles of Data Visualisation
 // Alasdair Rutherford
 // University of Stirling
-// 2017
-
+// Created: 2017
+// Last Updated: 31 Jan 2020
 
 // Preparation
 
@@ -85,9 +85,11 @@ twoway (scatter age fare if sex=="female", msize(small) msymbol(circle_hollow)) 
 	legend(label(1 "Female") label(2 "Male"))
 	
 * Use this to code by a third variable
-twoway (scatter age fare if sex=="female" & survived==1, msize(small) mcolor(cranberry) msymbol(circle)) (scatter age fare if sex=="female" & survived==0, msize(small) mcolor(cranberry) msymbol(X)) ///
-	   (scatter age fare if sex=="male"& survived==1, msize(small) mcolor(dknavy) msymbol(circle)) (scatter age fare if sex=="male"& survived==0, msize(small) mcolor(dknavy) msymbol(X) ), ///
-	legend(label(1 "Female") label(2 "Female(D)") label(3 "Male") label(4 "Male(D)"))
+twoway 	(scatter age fare if sex=="female" & survived==1, msize(small) mcolor(cranberry) msymbol(circle)) ///
+		(scatter age fare if sex=="female" & survived==0, msize(small) mcolor(cranberry) msymbol(X)) ///
+	    (scatter age fare if sex=="male"& survived==1, msize(small) mcolor(dknavy) msymbol(circle)) ///
+		(scatter age fare if sex=="male"& survived==0, msize(small) mcolor(dknavy) msymbol(X) ), ///
+		legend(label(1 "Female") label(2 "Female(D)") label(3 "Male") label(4 "Male(D)"))
 
 * Or even a fourth variable
 twoway (scatter age fare if sex=="female" & survived==1, msize(small) mcolor(cranberry) msymbol(circle)) (scatter age fare if sex=="female" & survived==0, msize(small) mcolor(cranberry) msymbol(X)) ///
@@ -215,6 +217,7 @@ graph bar (mean) ffare mfare , over(pclass)  bar(1, color(dkorange))  bar(2, col
 	legend(label(1 "Female") label(2 "Male")) ///
 	title("Titanic Passengers: Fare paid by Passenger Class") subtitle("A bar graph of average fares by passenger class") ///
 	note("Produced: $S_TIME  $S_DATE") caption("This is historical data derived from the passenger records.")	///
+	b1title("Age (Years)")	///	
 	ytitle("Average Passenger Fare Paid (£)") ///
 	graphregion(fcolor(white))
 
@@ -247,8 +250,9 @@ graph bar (mean) fsurv msurv, over(age5,label(labsize(vsmall)))
 * And tidy it up as before ...
 graph bar (mean) fsurv msurv, over(age5,label(labsize(vsmall))) bar(1, color(dkorange))  bar(2, color(dknavy)) ///
 	legend(label(1 "Female") label(2 "Male")) ///
-	title("Titanic Passengers: Survival Rate by Gender") subtitle("A bar graph of survival") ///
+	title("Titanic Passengers: Survival Rate by Gender and Age") subtitle("A bar graph of survival") ///
 	note("Produced: $S_TIME  $S_DATE") caption("This is historical data derived from the passenger records.")	///
+	b1title("Age (Years)")	///
 	ytitle("Proportion surviving") ///
 	graphregion(fcolor(white))
 
@@ -265,11 +269,11 @@ graph bar (mean) fsurv msurv, over(age5,label(labsize(vsmall))) bar(1, color(dko
 * 	(2) Create a scatter plot of age versus fare, using colour to represent
 *		survival and shape to represent passenger class
 
-* Write your syntax below.  You can copy & paste and edit syntax from above
-* to build up your graphs.
+* Create a new syntax file using your template.  You can copy & paste and edit syntax from above
+* to build up your graphs. Upload your syntax file to GitHub when  you have finished.
 
 * Remember to think about the use of text, colour, shape and labelling in
 * producing your graphs.
 
-use $path1\titanic.dta, clear
+
 
