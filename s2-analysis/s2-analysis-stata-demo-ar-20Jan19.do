@@ -2,7 +2,8 @@
 // Session Three: Data Visualisation for Analysis
 // Alasdair Rutherford
 // University of Stirling
-// 2017
+// Created: 2017
+// Last edited: 31 Jan 2020
 
 
 // Preparation
@@ -299,7 +300,7 @@ twoway  (scatter norm energy, msize(tiny)) ///
 // We use an "add-on" Stata command.  if it hasn't yet been installed on your PC you will need to install it
 
 net search coefplot
-net install gr0059_1.pkg
+net install gr0059_1.pkg, from(http://www.stata-journal.com/software/sj15-1)
 
 * Estimate our regression
 reg norm i.artistgender energy i.region i.homeawaycountry	
@@ -363,16 +364,11 @@ twoway scatter ploud norm
 
 * 	(2) Estimate a regression model of loudness, and visualise the results.
 
-* Write your syntax below.  You can copy & paste and edit syntax from above
+* Create a new syntax file usuing your template  You can copy & paste and edit syntax from above
 * to build up your graphs.
 
 * Remember to think about the use of text, colour, shape and labelling in
 * producing your graphs.
-
-use $path1\eurovision.dta, clear
-
-* This table is a start, but you need some graphs!
-tab year, sum(loudness)
 
 
 
