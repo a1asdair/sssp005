@@ -3,7 +3,7 @@
 // Alasdair Rutherford
 // University of Stirling
 // Created: 2017
-// Last Updated: 31 Jan 2020
+// Last Updated: 3 Feb 2020
 
 // Preparation
 
@@ -168,8 +168,8 @@ twoway (line avfare age5 if sex=="female", lcolor(dkorange) lpattern(dash) lwidt
 // =====================================================================	
 // Producing Bar Graphs
 
-* Bar garphs allow us to summarise a metric variable across a categorical variable.
-* ALternatvelky we can reprot poercentages of a second categorical variable.
+* Bar graphs allow us to summarise a metric variable across values of a categorical variable.
+* Alternatively we can report percentages of a second categorical variable.
 
 * Bar graphs use a slightly different syntax: -graph bar-
 
